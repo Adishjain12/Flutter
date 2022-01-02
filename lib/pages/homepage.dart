@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginapp/widgets/drawer.dart';
 
 class homepage extends StatelessWidget {
   const homepage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class homepage extends StatelessWidget {
           style: TextStyle(fontSize: 20.0, color: Colors.amberAccent),
         ),
       )),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
