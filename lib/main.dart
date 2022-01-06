@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:loginapp/utils/routes.dart';
 import 'package:loginapp/widgets/Themes.dart';
 import 'pages/loginpage.dart';
-import 'pages/homepage.dart';
+import 'package:loginapp/pages/homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,4 +27,5 @@ class MyApp extends StatelessWidget {
       },
     );
   }
+
 }
