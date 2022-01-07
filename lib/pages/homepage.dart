@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:loginapp/models/catalog.dart';
@@ -44,12 +45,44 @@ class _homepageState extends State<homepage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
-            ? ListView.builder(
+            ? /*ListView.builder(
                 itemCount: CatalogModel.items!.length,
                 itemBuilder: (context, index) {
                   return ItemWidget(
                     item: CatalogModel.items![index],
                     key: null,
+                  );
+                },
+              )*/
+            GridView.builder(
+                itemCount: CatalogModel.items!.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16),
+                itemBuilder: (context, index) {
+                  final item = CatalogModel.items![index];
+                  return Card(
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15)),
+                    child: GridTile(
+                      header: Container(
+                          child: Text(
+                            item.name,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(color:Colors.deepPurple),
+                        ),
+                      child: Image.network(item.image),
+                      footer: Container(
+                            child: Text(
+                              "\$${item.price}",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            color: Colors.black)
+                    ),
                   );
                 },
               )
