@@ -11,12 +11,14 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       bottomNavigationBar: ButtonBar(
         alignment: MainAxisAlignment.spaceBetween,
         buttonPadding: EdgeInsets.zero,
         children: [
-          "\$${catalog.price}".text.bold.xl3.make(),
+          "\$${catalog.price}".text.bold.xl3.color(Colors.red).make(),
           ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
@@ -26,8 +28,8 @@ class HomeDetailPage extends StatelessWidget {
                 shape: MaterialStateProperty.all(
                   StadiumBorder(),
                 )),
-            child: "Buy".text.xl2.make(),
-          ).wh(100, 50)
+            child: "ADD TO CART".text.xl.make(),
+          ).wh(140, 50)
         ],
       ).p16(),
       body: Container(
@@ -36,7 +38,7 @@ class HomeDetailPage extends StatelessWidget {
             Hero(
                 tag: Key(catalog.id.toString()),
                 child: Container(
-                    height: 350,
+                    height: 300,
                     child: Center(child: Image.network(catalog.image)))),
             Expanded(
                 child: VxArc(
@@ -54,6 +56,10 @@ class HomeDetailPage extends StatelessWidget {
                         .make(),
                     catalog
                         .desc.text /*.textStyle(context.captionStyle)*/ .make(),
+                    "Sea diam accusam clita lorem magna stet ea rebum. Invidunt nonumy sit nonumy eos invidunt amet aliquyam, ea sit sanctus accusam et, ipsum sanctus dolor sit erat magna sanctus est. Eirmod sit "
+                        .text
+                        .make()
+                        .p12(),
                   ],
                 ).py20(),
               ),
