@@ -11,8 +11,8 @@ class CatalogHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          "Catalog App".text.xl4.bold.color(MyTheme.darkBluishColor).make(),
-          "Trending products".text.xl.make(),
+          "Catalog App".text.xl4.bold.color(context.theme.accentColor).make(),
+          "Trending products".text.xl.color(context.theme.accentColor).make(),
         ]),
         Expanded(
             child: Container(
@@ -21,8 +21,11 @@ class CatalogHeader extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, MyRoutes.cartRoute);
             },
-            child: Icon(CupertinoIcons.cart),
-            backgroundColor: Colors.redAccent,
+            child: Icon(
+              CupertinoIcons.cart,
+              color: Colors.white,
+            ),
+            backgroundColor: context.theme.buttonColor,
           ),
         ))
       ],

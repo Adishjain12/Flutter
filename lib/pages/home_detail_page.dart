@@ -10,7 +10,7 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.theme.canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
@@ -18,12 +18,12 @@ class HomeDetailPage extends StatelessWidget {
         alignment: MainAxisAlignment.spaceBetween,
         buttonPadding: EdgeInsets.zero,
         children: [
-          "\$${catalog.price}".text.bold.xl3.color(Colors.red).make(),
+          "\$${catalog.price}".text.bold.xl3.color(context.accentColor).make(),
           ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(
-                  MyTheme.darkBluishColor,
+                  context.theme.buttonColor,
                 ),
                 shape: MaterialStateProperty.all(
                   StadiumBorder(),
@@ -46,12 +46,12 @@ class HomeDetailPage extends StatelessWidget {
               arcType: VxArcType.CONVEY,
               edge: VxEdge.TOP,
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
                 width: context.screenWidth,
                 child: Column(
                   children: [
                     catalog.name.text.xl4
-                        .color(MyTheme.darkBluishColor)
+                        .color(context.accentColor)
                         .bold
                         .make(),
                     catalog
