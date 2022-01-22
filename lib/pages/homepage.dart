@@ -124,16 +124,12 @@ class CatalogItem extends StatelessWidget {
   }
 }*/
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:loginapp/models/catalog.dart';
-import 'package:loginapp/widgets/drawer.dart';
 import 'package:loginapp/widgets/home_widgets/catalog_header.dart';
 import 'package:loginapp/widgets/home_widgets/catalog_list.dart';
-import 'package:loginapp/widgets/item_widget.dart';
-import 'package:loginapp/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
